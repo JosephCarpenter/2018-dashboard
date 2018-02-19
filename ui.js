@@ -117,17 +117,7 @@ function onValueChanged(key, value, isNew) {
 				ui.auto.select.appendChild(option);
 			}
 			// Set value to the already-selected mode. If there is none, nothing will happen.
-			ui.auto.select.value = NetworkTables.getValue('/SmartDashboard/Autonomous Mode/selected');
-			break;
-		case '/SmartDashboard/Autonomous Mode/selected':
-			ui.auto.select.value = value;
-			ui.replay.wrapper.style.display = value === 'Replay' ? 'block' : 'none';
-			break;
-		case '/autonomous/Replay/source':
-			ui.replay.name.value = value;
-			break;
-		case '/components/recorder/title':
-			ui.replay.target.value = value;
+			ui.auto.select.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
 			break;
 		case '/SmartDashboard/theme':
             ui.theme.select.value = value;
